@@ -1,0 +1,30 @@
+# Use an official Python runtime as a parent image
+FROM python:3.7-alpine
+ENV PYTHONUNBUFFERED 1
+
+RUN apk add --update \
+    build-base \
+    linux-headers \
+    postgresql-dev \
+    jpeg-dev \
+    zlib-dev \
+    git \
+    && rm -rf /var/cache/apk/*
+
+RUN mkdir -p /resources/static && mkdir /resources/media
+
+ADD ./requirements.txt /code/
+# Install any needed packages specified in requirements.txt
+RUN pip install --upgrade pip && pip install -r /code/requirements.txt
+
+# Copy the current directory contents into the container at /code/
+COPY . /code/
+# Set the working directory to /code/
+WORKDIR /code/
+
+RUN addgroup -S --gid 1000 decepticons && adduser -S --uid 1000 -G decepticons megatron
+RUN chown -R megatron:decepticons /code
+RUN chown -R megatron:decepticons /resources
+USER megatron
+
+EXPOSE 8000

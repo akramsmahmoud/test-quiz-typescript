@@ -1,0 +1,29 @@
+.question-container {
+  width: 82%;
+  margin: 0 auto;
+}
+.question {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+.answers-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.answers-list li {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+h1 {
+  color: #ffffff;
+}

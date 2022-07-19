@@ -1,0 +1,38 @@
+.result-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.score {
+  background-image: url('../question-bg.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: Roboto;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  color: #ffd600;
+  width: 185px;
+  height: 185px;
+  margin-top: -80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 47px;
+  color: #ffffff;
+}
+
+.result-container button {
+  margin-top: 10rem;
+}
